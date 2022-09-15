@@ -36,6 +36,15 @@ describe("Customer unit tests", () => {
         }).toThrowError("RewardPoint must be greater than zero");
     });
 
+    it("Should add rewardPoints successfully", () => {
+        const address = new Address("Rua das ruas", 123, "w7122", "São Paulo");
+        const customer = new Customer("123", "Eduardo Rombi");
+        customer.updateAddress(address);
+        customer.addRewardPoints(10);
+
+        expect(customer.rewardPoints).toBe(10);
+    });
+
     it("Should active customer successfully when Address is there", () => {
         const address = new Address("Rua das ruas", 123, "w7122", "São Paulo");
         const customer = new Customer("123", "Eduardo Rombi");
