@@ -32,7 +32,7 @@ export default class OrderItem {
             throw new Error("Quantity is required");
         }
     }
-
+    
     get Price(): number {
         return this._price;
     }

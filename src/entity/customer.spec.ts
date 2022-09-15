@@ -22,6 +22,20 @@ describe("Customer unit tests", () => {
         }).toThrowError("Address is required");
     });
 
+    it("Should throw error when points is equals zero", () => {
+        expect(() => {
+            const customer = new Customer("123", "Eduardo Rombi");
+            customer.addRewardPoints(0);
+        }).toThrowError("RewardPoint must be greater than zero");
+    });
+
+    it("Should throw error when points is less than zero", () => {
+        expect(() => {
+            const customer = new Customer("123", "Eduardo Rombi");
+            customer.addRewardPoints(-10);
+        }).toThrowError("RewardPoint must be greater than zero");
+    });
+
     it("Should active customer successfully when Address is there", () => {
         const address = new Address("Rua das ruas", 123, "w7122", "São Paulo");
         const customer = new Customer("123", "Eduardo Rombi");
