@@ -37,12 +37,13 @@ describe("Customer unit tests", () => {
     });
 
     it("Should add rewardPoints successfully", () => {
-        const address = new Address("Rua das ruas", 123, "w7122", "São Paulo");
         const customer = new Customer("123", "Eduardo Rombi");
-        customer.updateAddress(address);
-        customer.addRewardPoints(10);
 
+        expect(customer.rewardPoints).toBe(0);
+        customer.addRewardPoints(10);
         expect(customer.rewardPoints).toBe(10);
+        customer.addRewardPoints(10);
+        expect(customer.rewardPoints).toBe(20);
     });
 
     it("Should active customer successfully when Address is there", () => {
