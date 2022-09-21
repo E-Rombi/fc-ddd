@@ -50,11 +50,24 @@ export default class Customer {
         this._rewardPoints += points
     }
 
+    changeName(name: string) {
+        this._name = name;
+        this.validate();
+    }
+
     get id(): string {
         return this._id;
     }
 
+    get name(): string {
+        return this._name;
+    }
+
     get rewardPoints(): number {
         return this._rewardPoints;
+    }
+
+    get address(): Address {
+        return this._address;
     }
 }
